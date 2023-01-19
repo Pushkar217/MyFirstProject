@@ -18,7 +18,7 @@ public class BinarySearchRec
             a[i] = num.nextInt();
         }
 
-
+        //New line comment for the git.
         int res = binarySearch(a,0,n);
         System.out.println("The element found in "+res+" Position");
     }
