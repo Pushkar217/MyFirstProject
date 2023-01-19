@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class BinarySearchRec
+{
+    public static void main(String[] args)
+    {
+        int n;
+        System.out.println("Enter n:");
+
+        Scanner num = new Scanner(System.in);
+        n=num.nextInt();
+
+        int[] a = new int[6];
+        System.out.println("Enter the array in sorted order:");
+
+        for(int i=0;i<n;i++)
+        {
+            a[i] = num.nextInt();
+        }
+
+
+        int res = binarySearch(a,0,n);
+        System.out.println("The element found in "+res+" Position");
+    }
+
+    public static int binarySearch(int[] a, int min,int max)
+    {
+        int key,num1 = 0,middle;
+        Scanner num = new Scanner(System.in);
+        key = num.nextInt();
+        middle=min+max/2;
+        if(a[middle]==key)
+        {
+            num1=middle;
+        }
+        else if(key>a[middle])
+        {
+            binarySearch(a,middle+1,max);
+        }
+        else
+            binarySearch(a,0,middle-1);
+        return num1;
+    }
+
+}
